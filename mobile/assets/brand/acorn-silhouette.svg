@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Treasured acorn (source art). Regenerate PNGs from these files. -->
+  <defs>
+    <!-- Cuts a thin gap along the cap's rim so the cap and nut stay distinct in one color. -->
+    <mask id="rimGap" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+      <rect width="1024" height="1024" fill="#FFFFFF"/>
+      <path d="M290,500 C364,526 660,526 734,500" fill="none" stroke="#000000" stroke-width="26" transform="rotate(15 512 560)"/>
+    </mask>
+  </defs>
+  <g mask="url(#rimGap)">
+    <g transform="rotate(15 512 560)" fill="#FFFFFF">
+      <path d="M496,300 C494,256 508,218 540,192 L566,214 C538,236 528,264 530,300 Z"/>
+      <path d="M326,488 C320,690 410,846 500,868 Q512,884 524,868 C614,846 704,690 698,488 Z"/>
+      <path d="M290,500 C284,370 390,292 512,292 C634,292 740,370 734,500 C660,526 364,526 290,500 Z"/>
+    </g>
+  </g>
+</svg>

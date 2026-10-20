@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 import { Body, Button, ErrorText, Screen, TextField, Title } from '@/components/ui';
 import { supabase } from '@/lib/supabase';
@@ -37,8 +37,11 @@ export default function SignIn() {
   return (
     <Screen>
       <View style={styles.brand}>
-        {/* Logo placeholder until the visual design pass. */}
-        <View style={styles.logo} />
+        <Image
+          source={require('../../assets/icon.png')}
+          style={styles.logo}
+          accessibilityLabel="Treasured acorn logo"
+        />
         <Text style={styles.name}>Treasured</Text>
         <Text style={styles.motto}>Treasure His word in your heart</Text>
       </View>
@@ -49,7 +52,7 @@ export default function SignIn() {
       <TextField
         value={email}
         onChangeText={setEmail}
-        placeholder="you@example.com"
+        placeholder="Email"
         keyboardType="email-address"
         autoCapitalize="none"
         autoCorrect={false}
@@ -68,14 +71,15 @@ export default function SignIn() {
       </View>
 
       {/* Wired up in step 2. */}
-      <Button label="Continue with Google" variant="secondary" onPress={() => {}} disabled />
+      <Button label="Continue with Google" variant="secondary" onPress={() => { }} disabled />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   brand: { alignItems: 'center', gap: 6, marginBottom: 24 },
-  logo: { width: 56, height: 56, borderRadius: 28, backgroundColor: colors.border },
+  // Same image as the app icon, rounded like iOS's home screen (about 22% of the width).
+  logo: { width: 72, height: 72, borderRadius: 16 },
   name: { fontFamily: fonts.serif, fontSize: 34, color: colors.text },
   motto: { fontFamily: fonts.serif, fontStyle: 'italic', fontSize: 16, color: colors.muted },
   dividerRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
