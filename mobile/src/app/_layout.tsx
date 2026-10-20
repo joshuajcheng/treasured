@@ -45,6 +45,8 @@ function RootStack() {
     <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.background } }}>
       <Stack.Protected guard={signedIn && hasProfile}>
         <Stack.Screen name="index" />
+        {/* No swipe back: leaving goes through the ✕ and its confirmation. */}
+        <Stack.Screen name="practice" options={{ gestureEnabled: false }} />
       </Stack.Protected>
       <Stack.Protected guard={signedIn && !hasProfile}>
         <Stack.Screen name="name" />
